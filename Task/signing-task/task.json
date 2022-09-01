@@ -1,0 +1,55 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "b8857f68-e2e2-46c2-8f78-17e6b1fd1ff6",
+    "name": "venafi-signing-task",
+    "friendlyName": "Venafi code signing task",
+    "description": "This task signs code with Venafi CodeSign Protect",
+    "helpMarkDown": "",
+    "category": "Information Protection",
+    "author": "Sidechain Security",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 1
+    },
+    "instanceNameFormat": "Code Sign",
+    "inputs": [
+        {
+            "name": "authurl",
+            "type": "string",
+            "label": "authURL",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "authURL for Venafi CodeSign Protect"
+        },
+        {
+            "name": "hsmurl",
+            "type": "string",
+            "label": "hsmURL",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "hsmURL for Venafi Codesign Protect"
+        },
+        {
+            "name": "username",
+            "type": "string",
+            "label": "Venafi CSP username",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Venafi CSP username"
+        },
+        {
+            "name": "password",
+            "type": "string",
+            "label": "Venafi CSP password",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Venafi CSP password"
+        }                        
+    ],
+    "execution": {
+        "Node10": {
+            "target": "index.js"
+        }
+    }
+}
